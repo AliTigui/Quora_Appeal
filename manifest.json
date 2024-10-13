@@ -1,0 +1,40 @@
+{
+    "name": "apeal cat",
+    "version": "1.0.0",
+    "description": "apeal quora answer",
+    "manifest_version": 3,
+    "author": "ali",
+    "action":{
+        "default_popup": "app.html",
+        "default_title": "apeal cat"
+    },
+
+      "content_security_policy": {
+        
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+      },
+      "permissions": ["scripting",
+        "activeTab",
+        "contextMenus",
+        "storage",
+        "cookies",
+        "<all_urls>"
+      ],
+      "optional_permissions": [
+        "topSites"
+      ],
+      "host_permissions": [
+        "*://*/*"
+      ],
+      "content_scripts": [
+        {
+          "matches": [
+            "<all_urls>"
+          ],
+          "js": ["runner.js"]
+        }
+      ]
+    
+
+
+}
