@@ -12,18 +12,72 @@ document.querySelector('#apeal').addEventListener('click', function(){
       })
 
   });
+  document.getElementById('inputfile')
+            .addEventListener('change', function () {
+
+                let fr = new FileReader();
+                fr.onload = function () {
+
+                  chrome.storage.sync.set({ "data": "ali" }).then(() => {
+                    document.getElementById("done").innerHTML="done";
+                  
+              
+              });
+                    
+                }
+                
+                fr.readAsText(this.files[0]);
+            })
   document.querySelector('#config').addEventListener('click', function(){
 
-
+    let email=document.querySelector('#email').value
+    let subject=document.querySelector('#subject').value 
+    let description=document.querySelector('#description').value 
+    let name=document.querySelector('#name').value 
+    let end=document.querySelector('#end').value 
+    let cursor=document.querySelector('#cursor').value 
     chrome.cookies.set({
-      "name": "Sample1",
+      "name": "email",
       "url": "https://help.quora.com/hc/en-us/requests/new?ticket_form_id=198746",
-      "value": "Dummy Data"
+      "value": email
   }, function (cookie) {
-      console.log(JSON.stringify(cookie));
-      console.log(chrome.extension.lastError);
-      console.log(chrome.runtime.lastError);
+      
   });
+  chrome.cookies.set({
+    "name": "subject",
+    "url": "https://help.quora.com/hc/en-us/requests/new?ticket_form_id=198746",
+    "value": subject
+}, function (cookie) {
+
+});
+chrome.cookies.set({
+  "name": "description",
+  "url": "https://help.quora.com/hc/en-us/requests/new?ticket_form_id=198746",
+  "value": description
+}, function (cookie) {
+ 
+});
+chrome.cookies.set({
+  "name": "name",
+  "url": "https://help.quora.com/hc/en-us/requests/new?ticket_form_id=198746",
+  "value": name
+}, function (cookie) {
+
+});
+chrome.cookies.set({
+  "name": "counter",
+  "url": "https://help.quora.com/hc/en-us/requests/new?ticket_form_id=198746",
+  "value": cursor
+}, function (cookie) {
+
+});
+chrome.cookies.set({
+  "name": "end",
+  "url": "https://help.quora.com/hc/en-us/requests/new?ticket_form_id=198746",
+  "value": end
+}, function (cookie) {
+ 
+});
     
      
 

@@ -18,7 +18,9 @@
         "contextMenus",
         "storage",
         "cookies",
-        "<all_urls>"
+        "<all_urls>",
+        "storage",
+        "tabs"
       ],
       "optional_permissions": [
         "topSites"

@@ -62,7 +62,7 @@ function checkCookie(name) {
     return false
   }
 }
-let end=links.length;
+let end=parseInt(getCookie("end"));
 
 function appeal(){
 
@@ -72,20 +72,20 @@ function appeal(){
   }
 
 let email =document.querySelector("#request_anonymous_requester_email")
-email.value="salemseeker@proton.me"
+email.value=getCookie("email")
 
 let title=document.querySelector("#request_subject")
-title.value="Request to uncollapse my answer"
+title.value=getCookie("subject")
 
 let description = document.querySelector("#request_description")
 
-description.value="Hello Quora moderators, my answer may have been mistakenly collapsed. I follow Quora's policies and guidelines, and abideby them. Please reinstate my answer, and correct this mistake. Thank you."
+description.value= getCookie("description")
 let click  = document.querySelector("#new_request > div.form-field.string.required.request_custom_fields_25419166 > a")
 click.click()
 document.querySelector("#flagged_question").click()
 
 let name =document.querySelector("#request_custom_fields_25368063")
-name.value="Handala"
+name.value=getCookie("name")
 let link = document.querySelector("#request_custom_fields_360039199971")
 let counter=parseInt(getCookie("counter"))
 
@@ -96,7 +96,7 @@ else{
   link.value=links[counter]["Link"]
  
   setCookie("counter",counter+1,20)
-  document.querySelector("#new_request > footer > input[type=submit]").click()
+  //document.querySelector("#new_request > footer > input[type=submit]").click()
 }
 
 }
