@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
+  chrome.cookies.get(
+    {
+      "name": "counter",
+      "url": "https://help.quora.com/hc/en-us/requests/new?ticket_form_id=198746",
+      
+  }, function (cookie) {
+    document.querySelector('#passed').innerHTML=cookie.value;
+  }
+  )
+  chrome.cookies.get(
+    {
+      "name": "cursor",
+      "url": "https://help.quora.com/hc/en-us/requests/new?ticket_form_id=198746",
+  }, function (cookie) {
+      document.querySelector('#position').innerHTML=cookie.value;
+  }
+  )
+  
 
 document.querySelector('#apeal').addEventListener('click', function(){
 
@@ -65,7 +83,7 @@ chrome.cookies.set({
 
 });
 chrome.cookies.set({
-  "name": "counter",
+  "name": "cursor",
   "url": "https://help.quora.com/hc/en-us/requests/new?ticket_form_id=198746",
   "value": cursor
 }, function (cookie) {

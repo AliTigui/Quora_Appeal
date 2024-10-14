@@ -63,12 +63,17 @@ function checkCookie(name) {
   }
 }
 let end=parseInt(getCookie("end"));
-
+if(!getCookie("counter")){
+    
+  setCookie("counter",0,20)
+}else{
+  setCookie("counter",parseInt(getCookie("counter"))+1,20)
+}
 function appeal(){
 
-  if(!getCookie("counter")){
+  if(!getCookie("cursor")){
     
-    setCookie("counter",0,20)
+    setCookie("cursor",0,20)
   }
 
 let email =document.querySelector("#request_anonymous_requester_email")
@@ -87,15 +92,15 @@ document.querySelector("#flagged_question").click()
 let name =document.querySelector("#request_custom_fields_25368063")
 name.value=getCookie("name")
 let link = document.querySelector("#request_custom_fields_360039199971")
-let counter=parseInt(getCookie("counter"))
+let cursor=parseInt(getCookie("cursor"))
 
-if (counter>=end){
+if (cursor>=end){
   alert("finished")
 }
 else{
-  link.value=links[counter]["Link"]
+  link.value=links[cursor]["Link"]
  
-  setCookie("counter",counter+1,20)
+  setCookie("cursor",cursor+1,20)
   document.querySelector("#new_request > footer > input[type=submit]").click()
 }
 
