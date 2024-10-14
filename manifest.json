@@ -19,13 +19,13 @@
         "storage",
         "cookies",
         "<all_urls>",
-        "storage",
         "tabs"
       ],
       "optional_permissions": [
         "topSites"
       ],
       "host_permissions": [
+        "<all_urls>",
         "*://*/*"
       ],
       "content_scripts": [

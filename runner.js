@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelector('#position').innerHTML=cookie.value;
   }
   )
-  
+
 
 document.querySelector('#apeal').addEventListener('click', function(){
 
@@ -33,16 +33,22 @@ document.querySelector('#apeal').addEventListener('click', function(){
   });
   document.getElementById('inputfile')
             .addEventListener('change', function () {
-
+              
                 let fr = new FileReader();
                 fr.onload = function () {
-
-                  chrome.storage.sync.set({ "data": "ali" }).then(() => {
-                    document.getElementById("done").innerHTML="done";
                   
-              
-              });
-                    
+                  chrome.tabs.query({active: true, currentWindow: true}).then(([tab]) => {
+                chrome.scripting.executeScript(
+                    {
+                        target: { tabId: tab.id },
+                        func: setDomainStorageData,
+                        args:[fr.result]
+                         
+                    },
+                  )
+                })
+                document.querySelector("#done").innerHTML="done"
+                
                 }
                 
                 fr.readAsText(this.files[0]);
@@ -102,3 +108,7 @@ chrome.cookies.set({
 
   });
 })
+function setDomainStorageData(data) {
+  localStorage.setItem("answers",data)
+
+}
