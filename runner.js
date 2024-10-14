@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+
   chrome.cookies.get(
     {
       "name": "counter",

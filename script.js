@@ -32,11 +32,11 @@ let links =[{"Title":"What is the reason behind Britains support for Israel even
 {"Title":"Is the BDS movement succeeding ?","Link":"https://www.quora.com/Is-the-BDS-movement-succeeding/answer/Handala-2","Assignee":"Ali","Appealed":"No"}]
 
 
-function setCookie(cname, cvalue, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  let expires = "expires="+d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+function setCookie(cname, cvalue) {
+  //const d = new Date();
+  //d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+ // let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" ;
 }
 
 function getCookie(cname) {
@@ -65,15 +65,15 @@ function checkCookie(name) {
 let end=parseInt(getCookie("end"));
 if(!getCookie("counter")){
     
-  setCookie("counter",0,20)
+  setCookie("counter",1)
 }else{
-  setCookie("counter",parseInt(getCookie("counter"))+1,20)
+  setCookie("counter",parseInt(getCookie("counter"))+1)
 }
 function appeal(){
 
   if(!getCookie("cursor")){
     
-    setCookie("cursor",0,20)
+    setCookie("cursor",0)
   }
 
 let email =document.querySelector("#request_anonymous_requester_email")
@@ -100,7 +100,7 @@ if (cursor>=end){
 else{
   link.value=links[cursor]["Link"]
  
-  setCookie("cursor",cursor+1,20)
+  setCookie("cursor",cursor+1)
   document.querySelector("#new_request > footer > input[type=submit]").click()
 }
 
