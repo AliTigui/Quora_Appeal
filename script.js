@@ -96,7 +96,7 @@ else{
   link.value=links[counter]["Link"]
  
   setCookie("counter",counter+1,20)
-  //document.querySelector("#new_request > footer > input[type=submit]").click()
+  document.querySelector("#new_request > footer > input[type=submit]").click()
 }
 
 }
