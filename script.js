@@ -1,4 +1,4 @@
-let links = JSON.parse(localStorage.answers)
+
 
 function setCookie(cname, cvalue) {
   //const d = new Date();
@@ -30,15 +30,17 @@ function checkCookie(name) {
     return false
   }
 }
-let end=parseInt(getCookie("end"));
-if(!getCookie("counter")){
-    
-  setCookie("counter",1)
-}else{
-  setCookie("counter",parseInt(getCookie("counter"))+1)
-}
-function appeal(){
 
+
+function appeal(){
+  let links = JSON.parse(localStorage.answers);
+  let end=parseInt(getCookie("end"));
+  if(!getCookie("counter")){
+    
+    setCookie("counter",1)
+  }else{
+    setCookie("counter",parseInt(getCookie("counter"))+1)
+  }
   if(!getCookie("cursor")){
     
     setCookie("cursor",0)
