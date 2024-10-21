@@ -1,12 +1,12 @@
 {
     "name": "Quora Appeal",
     "version": "1.0.0",
-    "description": "apeal quora answer",
+    "description": "Appeal Quora Answer",
     "manifest_version": 3,
     "author": "ali",
     "action":{
         "default_popup": "app.html",
-        "default_title": "apeal cat"
+        "default_title": "Quora Appeal"
     },
 
       "content_security_policy": {
@@ -18,14 +18,12 @@
         "contextMenus",
         "storage",
         "cookies",
-        "<all_urls>",
         "tabs"
       ],
       "optional_permissions": [
         "topSites"
       ],
       "host_permissions": [
-        "<all_urls>",
         "*://*/*"
       ],
       "content_scripts": [
