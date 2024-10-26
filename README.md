@@ -9,7 +9,7 @@ First clone this repo or download and unzip it then open Google Chrome go to ext
 First clone this repo or download and unzip it then open Microsoft Edge go to extension click manage extension, activate developer mode then click load unpacked extension
 
 ![Edge tutorial](edge.gif)
-### For Microsoft Edge
+### For Fire Fox
 First clone this repo or download and unzip it then open firefox ``about:debugging`` click on Fire fox then click load temporary add ons then select the ``extension.zip``
 
 ![Fire Fox](firefox.gif)
