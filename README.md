@@ -13,3 +13,8 @@ First clone this repo or download and unzip it then open Microsoft Edge go to ex
 First clone this repo or download and unzip it then open firefox ``about:debugging`` click on Fire fox then click load temporary add ons then select the ``extension.zip``
 
 ![Fire Fox](firefox.gif)
+
+## Tutorial how to use the app 
+[![Watch the video](tuto.png)](tuto.mp4)
+
+to load the answers links as json file us [answers loader](https://github.com/AliTigui/answers_loader)
