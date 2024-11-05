@@ -15,6 +15,6 @@ First clone this repo or download and unzip it then open firefox ``about:debuggi
 ![Fire Fox](firefox.gif)
 
 ## Tutorial how to use the app 
-[![Watch the video](tuto.png)](tuto.mp4)
+[![Watch the video](tuto.png)](https://github.com/AliTigui/Quora_Appeal/blob/master/tuto.mp4)
 
 to load the answers links as json file us [answers loader](https://github.com/AliTigui/answers_loader)
